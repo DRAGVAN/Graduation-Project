@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserWindow</class>
+ <widget class="QMainWindow" name="UserWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>378</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UserWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>processed</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btMethod_1">
+         <property name="text">
+          <string>method 1</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>14</width>
+           <height>14</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btMethod_2">
+         <property name="text">
+          <string>method 2</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>128</width>
+           <height>14</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btMethod_3">
+         <property name="text">
+          <string>method 3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="3">
+        <widget class="QGraphicsView" name="graphicsView_2"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btSavePic">
+         <property name="text">
+          <string>save picture</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>unprocessed</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btOpenPic">
+         <property name="text">
+          <string>open picture</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="3">
+        <widget class="QGraphicsView" name="graphicsView">
+         <property name="minimumSize">
+          <size>
+           <width>260</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="sceneRect">
+          <rectf>
+           <x>0.000000000000000</x>
+           <y>0.000000000000000</y>
+           <width>0.000000000000000</width>
+           <height>0.000000000000000</height>
+          </rectf>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="btClosePic">
+         <property name="text">
+          <string>close picture</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>14</width>
+           <height>14</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>560</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuview_dataset">
+     <property name="title">
+      <string>view dataset</string>
+     </property>
+     <addaction name="actionprocessed"/>
+     <addaction name="actionunprocessed"/>
+    </widget>
+    <addaction name="menuview_dataset"/>
+    <addaction name="actionadd_dataset"/>
+    <addaction name="actiondelete_dataset"/>
+   </widget>
+   <widget class="QMenu" name="menulog_out">
+    <property name="title">
+     <string>Account</string>
+    </property>
+    <addaction name="actionmanage_information"/>
+    <addaction name="actionswitch_account"/>
+    <addaction name="actionchange_password"/>
+    <addaction name="actionlog_out"/>
+   </widget>
+   <widget class="QMenu" name="menuhelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actioninstructions"/>
+    <addaction name="actioncontact_administrator"/>
+    <addaction name="actionreport_error"/>
+   </widget>
+   <widget class="QMenu" name="menuExit">
+    <property name="title">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menulog_out"/>
+   <addaction name="menuhelp"/>
+   <addaction name="menuExit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionadd_dataset">
+   <property name="text">
+    <string>add dataset</string>
+   </property>
+  </action>
+  <action name="actiondelete_dataset">
+   <property name="text">
+    <string>delete dataset</string>
+   </property>
+  </action>
+  <action name="actionlog_out">
+   <property name="text">
+    <string>log out</string>
+   </property>
+  </action>
+  <action name="actionswitch_account">
+   <property name="text">
+    <string>switch account</string>
+   </property>
+  </action>
+  <action name="actionchange_password">
+   <property name="text">
+    <string>change password</string>
+   </property>
+  </action>
+  <action name="actioninstructions">
+   <property name="text">
+    <string>instructions</string>
+   </property>
+  </action>
+  <action name="actioncontact_administrator">
+   <property name="text">
+    <string>contact administrator</string>
+   </property>
+  </action>
+  <action name="actionreport_error">
+   <property name="text">
+    <string>report error</string>
+   </property>
+  </action>
+  <action name="actionprocessed">
+   <property name="text">
+    <string>processed</string>
+   </property>
+  </action>
+  <action name="actionunprocessed">
+   <property name="text">
+    <string>unprocessed</string>
+   </property>
+  </action>
+  <action name="actionmanage_information">
+   <property name="text">
+    <string>manage information</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
