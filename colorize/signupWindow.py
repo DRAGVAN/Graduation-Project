@@ -19,7 +19,7 @@ class QSignupWindow(QWidget):
         self.ui.btnCancle.clicked.connect(self.on_btnCancle_clicked)
         # self.setFixedSize(250, 250)
         palette = QPalette()
-        palette.setBrush(QPalette.Window, QBrush(QPixmap('./background/sign/sign.jpg')))
+        palette.setBrush(QPalette.Window, QBrush(QPixmap('background/sign/sign.jpg')))
         self.setPalette(palette)
 
     @pyqtSlot()

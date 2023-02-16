@@ -22,7 +22,7 @@ class QLoginWindow(QWidget):
         self.ui.btnForgot.clicked.connect(self.on_btnForgot_clicked)
         # self.setFixedSize(300, 200)
         palette = QPalette()
-        palette.setBrush(QPalette.Window, QBrush(QPixmap('./background/login/back.jpg')))
+        palette.setBrush(QPalette.Window, QBrush(QPixmap('background/login/back.jpg')))
         self.setPalette(palette)
 
     @pyqtSlot()
@@ -40,7 +40,7 @@ class QLoginWindow(QWidget):
         except:
             f = open("userdata/register", 'w')
             f.write("{'root': 'password'}")
-            print('write')
+            # print('write')
             f.close()
 
         # user = {'root': 'password'}

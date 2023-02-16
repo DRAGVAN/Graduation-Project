@@ -62,8 +62,8 @@ class QUserWindow(QMainWindow):
         size = self.geometry()
         width = (screen.width() - size.width()) / 2
         height = (screen.height() - size.height()) / 2
-        print(width)
-        print(height)
+        # print(width)
+        # print(height)
         # self.move((screen.width() - size.width()) / 2,  (screen.height() - size.height()) / 2)
         # self.move(width, height)
     def displayImageToView2(self, method, ckpt):
@@ -77,9 +77,9 @@ class QUserWindow(QMainWindow):
             img = f.read()
         with open("CycleGAN/datasets/apple2orange/testA/1.jpg", 'wb') as f:
             f.write(img)
-        os.system("python CycleGAN/test.py --dataroot CycleGAN\\datasets\\apple2orange --name " + ckpt + " --model cycle_gan --gpu_ids -1")
+        os.system("python CycleGAN/test.py --dataroot CycleGAN/datasets/apple2orange --name " + ckpt + " --model cycle_gan --gpu_ids -1")
         img = cv2.imread("results/" + ckpt + "/test_latest/images/1_fake_B.png")
-        with open("results/l2g/test_latest/images/1_fake_B.png", 'rb') as f:
+        with open("results/" + ckpt + "/test_latest/images/1_fake_B.png", 'rb') as f:
             self.img_b = f.read()
         cvimg = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         y, x = img.shape[:-1]
@@ -101,11 +101,11 @@ class QUserWindow(QMainWindow):
 
     @pyqtSlot()
     def open_dataset(self):
-        curPath = QDir.currentPath() + "//dataset"
+        curPath = QDir.currentPath() + "/dataset"
         QFileDialog.getOpenFileName(self, "choose a file to open", curPath)
 
     def delete_dataset(self):
-        curPath = QDir.currentPath() + "//dataset"
+        curPath = QDir.currentPath() + "/dataset"
         QFileDialog.getOpenFileName(self,"Select a file and right click to delete", curPath)
 
     def log_out(self):
@@ -157,7 +157,7 @@ class QUserWindow(QMainWindow):
         filt = "picture files(*.jpg *.jpeg *.png)"
         filename, filtUsed = QFileDialog.getOpenFileName(self, dlgTitle, curPath, filt)
         if(filename == ""): return
-        print('open success')
+        # print('open success')
         self.filename = filename
         if(self.processedFlag == True):
             self.processedScene.clear()
@@ -172,7 +172,7 @@ class QUserWindow(QMainWindow):
 
     def on_btnClearPic_clicked(self):
         if(self.filename == ""): return
-        print('clear success')
+        # print('clear success')
         self.filename = ""
         self.unProcessedScene.clear()
         if(self.processedFlag == True):
@@ -181,34 +181,34 @@ class QUserWindow(QMainWindow):
 
     def on_btnMethod_1_clicked(self):
         if(self.filename == ""): 
-            print('file name is null')
+            # print('file name is null')
             return
         # print(self.filename)
 
         self.displayImageToView2('1', 'l2g')
-        print("method 1 success")
+        # print("method 1 success")
 
     def on_btnMethod_2_clicked(self):
         if(self.filename == ""): return
         self.displayImageToView2('2', 'l2y')
-        print("method 2 success")
+        # print("method 2 success")
 
     def on_btnMethod_3_clicked(self):
         if(self.filename == ""): return
         self.displayImageToView2('3', 'l2b')
-        print("method 3 success")
+        # print("method 3 success")
         
     def on_btnSavePic_clicked(self):
         if(self.filename == "" or self.processedFlag == False): return
         filename = self.filename.split('/')[-1]
         curPath = QDir.currentPath() + "/saved/" + filename
-        print(curPath)
+        # print(curPath)
         dlgTitle = "choose a path"
         filt = "*.jpg;; *.jpeg;; *.png"
         savedFileName, filtUsed = QFileDialog.getSaveFileName(self, dlgTitle, curPath, filt)
         if(savedFileName == ""): return
 
-        print('saved success')
+        # print('saved success')
         # reply = QMessageBox(self)
         QMessageBox.question(self, 'alert', "saved success", QMessageBox.Yes)
         # saved_diag = QDialog(self)

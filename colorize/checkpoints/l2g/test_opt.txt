@@ -3,7 +3,7 @@
                batch_size: 1                             
           checkpoints_dir: ./checkpoints                 
                 crop_size: 256                           
-                 dataroot: CycleGAN\datasets\apple2orange	[default: None]
+                 dataroot: CycleGAN/datasets/apple2orange	[default: None]
              dataset_mode: unaligned                     
                 direction: AtoB                          
           display_winsize: 256                           
